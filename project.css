@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0077b6;
+    padding: 10px 20px;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #0077b6, #90e0ef);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero button {
+    padding: 10px 20px;
+    background-color: white;
+    color: #0077b6;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #caf0f8;
+}
+
+/* Form Section */
+.form-section {
+    padding: 30px 20px;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.form-section input, .form-section button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+.form-section button {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-section button:hover {
+    background-color: #023e8a;
+}
+
+/* Skill Cards */
+.skills-section {
+    padding: 30px 20px;
+}
+
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.skill-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+}
+
+/* Testimonials */
+.testimonials-section {
+    background-color: #e0f7fa;
+    padding: 30px 20px;
+}
+
+.testimonial {
+    background: white;
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #0077b6;
+    color: white;
+    padding: 15px 10px;
+    margin-top: 20px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillBarter</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">SkillBarter</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Find Skills</a></li>
+            <li><a href="#post-skill">Post Skill Offer</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to SkillBarter</h1>
+        <p>Teach what you know. Learn what you love.</p>
+        <button onclick="scrollToForm()">Start Now</button>
+    </section>
+
+    <!-- Post Skill Form -->
+    <section id="post-skill" class="form-section">
+        <h2>Post Your Skill Offer</h2>
+        <form id="skillForm">
+            <label>Your Name:</label>
+            <input type="text" id="name" required>
+
+            <label>Skill You Can Teach:</label>
+            <input type="text" id="teachSkill" required>
+
+            <label>Skill You Want to Learn:</label>
+            <input type="text" id="learnSkill" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Skill Listings -->
+    <section id="skills" class="skills-section">
+        <h2>Available Skill Offers</h2>
+        <div class="skill-list" id="skillList">
+            <!-- Demo data -->
+            <div class="skill-card">
+                <h3>Jasraj Singh</h3>
+                <p><strong>Teaches:</strong> C++</p>
+                <p><strong>Wants to Learn:</strong> JavaScript</p>
+            </div>
+            <div class="skill-card">
+                <h3>Priya Sharma</h3>
+                <p><strong>Teaches:</strong> Photoshop</p>
+                <p><strong>Wants to Learn:</strong> Python</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="about" class="testimonials-section">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial">
+            <p>"I learned Python in just 3 weeks thanks to SkillBarter!" - <strong>Arjun</strong></p>
+        </div>
+        <div class="testimonial">
+            <p>"Great platform for connecting with like-minded learners." - <strong>Sneha</strong></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 SkillBarter. All rights reserved.</p>
+        <p>Contact: skillbarter@example.com</p>
+    </footer>
+
+    <script src="project.js"></script>
+</body>
+</html>
