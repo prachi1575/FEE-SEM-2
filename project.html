@@ -1,83 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkillBarter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="project.css">
 </head>
+
 <body>
 
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">SkillBarter</div>
-        <ul class="nav-links">
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
             <li><a href="#home">Home</a></li>
+            <li><a href="#post-skill">Post Offer</a></li>
             <li><a href="#skills">Find Skills</a></li>
-            <li><a href="#post-skill">Post Skill Offer</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#review">Reviews</a></li>
         </ul>
     </nav>
 
+
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <h1>Welcome to SkillBarter</h1>
-        <p>Teach what you know. Learn what you love.</p>
-        <button onclick="scrollToForm()">Start Now</button>
+        <img src="HeroSection.jpg" alt="" class="heroImg">
+        <div class="heroSection">
+            <div class="heroSectionContent">
+                <h1>Welcome to SkillBarter</h1>
+                <p>Trade knowledge, not money. SkillBarter connects passionate learners and skilled teachers in one
+                    community. Offer what
+                    you know, discover what you want to learn, and grow together — all in one place.</p>
+
+            </div>
+            <button onclick="scrollToForm()">Start Now</button>
+        </div>
     </section>
-
+    <div id="post-skill"></div>
     <!-- Post Skill Form -->
-    <section id="post-skill" class="form-section">
-        <h2>Post Your Skill Offer</h2>
-        <form id="skillForm">
-            <label>Your Name:</label>
-            <input type="text" id="name" required>
+    <section class="post-skill">
+        <h1 class="postSkillHeading">GET STARTED WITH US</h1>
+        <div class="form-section">
+            <h2>Post Your Skill Offer</h2>
+            <form id="skillForm">
+                <label>Your Name:</label>
+                <input type="text" id="name" required>
 
-            <label>Skill You Can Teach:</label>
-            <input type="text" id="teachSkill" required>
+                <label>Skill You Can Teach:</label>
+                <input type="text" id="teachSkill" required>
 
-            <label>Skill You Want to Learn:</label>
-            <input type="text" id="learnSkill" required>
+                <label>Skill You Want to Learn:</label>
+                <input type="text" id="learnSkill" required>
 
-            <button type="submit">Submit</button>
-        </form>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </section>
 
     <!-- Skill Listings -->
     <section id="skills" class="skills-section">
-        <h2>Available Skill Offers</h2>
-        <div class="skill-list" id="skillList">
-            <!-- Demo data -->
-            <div class="skill-card">
-                <h3>Jasraj Singh</h3>
-                <p><strong>Teaches:</strong> C++</p>
-                <p><strong>Wants to Learn:</strong> JavaScript</p>
-            </div>
-            <div class="skill-card">
-                <h3>Priya Sharma</h3>
-                <p><strong>Teaches:</strong> Photoshop</p>
-                <p><strong>Wants to Learn:</strong> Python</p>
+        <h1 class="skillHeading"> FIND BEST OFFERS</h1>
+        <div class="skills">
+            <h2>Available Skill Offers</h2>
+            <div class="skill-list" id="skillList">
+                <!-- Demo data -->
+                <div class="skill-card">
+                    <h3>Jasraj Singh</h3>
+                    <p><strong>Teaches:</strong> C++</p>
+                    <p><strong>Wants to Learn:</strong> JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Priya Sharma</h3>
+                    <p><strong>Teaches:</strong> Photoshop</p>
+                    <p><strong>Wants to Learn:</strong> Python</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <section id="about" class="testimonials-section">
-        <h2>What Our Users Say</h2>
-        <div class="testimonial">
-            <p>"I learned Python in just 3 weeks thanks to SkillBarter!" - <strong>Arjun</strong></p>
+    <section id="review" class="testimonials-section">
+        <h1 class="reviewHeading">CHECKOUT OUR REVIEWS</h1>
+        <div class="review">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial">
+                <p>"I learned Python in just 3 weeks thanks to SkillBarter!" - <strong>Arjun</strong></p>
+            </div>
+            <div class="testimonial">
+                <p>"Great platform for connecting with like-minded learners." - <strong>Sneha</strong></p>
+            </div>
         </div>
-        <div class="testimonial">
-            <p>"Great platform for connecting with like-minded learners." - <strong>Sneha</strong></p>
-        </div>
-    </section>
+        </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 SkillBarter. All rights reserved.</p>
-        <p>Contact: skillbarter@example.com</p>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footerHead">
+                    <h2 class="footer-logo">SkillBarter</h2>
+                    <p class="footer-tagline">Exchange skills. Learn together. Grow together.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <a href="#about">About</a>
+                    <a href="#review">Reviews</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <p>Email: <a href="mailto:skillbarter@example.com">skillbarter@example.com</a></p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+    
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 SkillBarter. All rights reserved.</p>
+        </div>
     </footer>
+
+
 
     <script src="project.js"></script>
 </body>
+
 </html>
