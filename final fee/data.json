@@ -1,0 +1,39 @@
+{
+    "offers": [
+        {
+            "name": "Jasraj Singh",
+            "have": "Teaches: C++",
+            "want": "Wants to Learn: JavaScript"
+        },
+        {
+            "name": "Prachi Dhawan",
+            "have": "Have: Book - Operating System (Galvin)",
+            "want": "Wants to Learn: Python"
+        },
+        {
+            "name": "Niranjan Singh",
+            "have": "Have: Music Instrument (Guitar)",
+            "want": "Wants: Music Instrument (Violin)"
+        },
+        {
+            "name": "Lavanya",
+            "have": "Have: Gaming Consoles",
+            "want": "Wants to Learn: Java"
+        },
+        {
+            "name": "Pulkit",
+            "have": "Teaches: React",
+            "want": "Wants to Learn: C++ (OOPs)"
+        },
+        {
+            "name": "Prabhsimran Kaur",
+            "have": "Have: Perfumes",
+            "want": "Wants: Lip Gloss (Dot & Key)"
+        },
+        {
+            "name": "Pradyuman Dhawan",
+            "have": "Have: Anime Posters",
+            "want": "Wants to Learn: Python"
+        }
+    ]
+}

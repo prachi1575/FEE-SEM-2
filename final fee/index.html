@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trade Bridge | Connect. Learn. Grow.</title>
+
+  <!-- FontAwesome + CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Trade Bridge</div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#home" class="active">Home</a></li>
+      <li><a href="index.html#post-skill">Post Offer</a></li>
+      <li><a href="offers.html">Offers</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1 class="fade-up">Connect. Learn. Grow.</h1>
+      <p class="fade-up-delay">
+        Trade Bridge connects people who want to exchange knowledge, books, or instruments — not money.
+        Join a growing community built on learning and sharing.
+      </p>
+      <button class="start-btn fade-up-delay2" onclick="document.getElementById('post-skill').scrollIntoView({behavior:'smooth'})">
+        Get Started
+      </button>
+    </div>
+  </section>
+
+  <!-- Counters Section -->
+  <section class="stats">
+    <div class="stat-card fade-up">
+      <h2>500+</h2>
+      <p>Trades Completed</p>
+    </div>
+    <div class="stat-card fade-up">
+      <h2>300+</h2>
+      <p>Active Members</p>
+    </div>
+    <div class="stat-card fade-up">
+      <h2>50+</h2>
+      <p>Categories</p>
+    </div>
+  </section>
+
+  <!-- Post Offer Form -->
+  <section class="post-skill" id="post-skill">
+    <h1 class="postSkillHeading">Post Your Offer</h1>
+    <div class="form-section glass fade-up">
+      <form id="skillForm">
+        <label>Your Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label>What do you offer?</label>
+        <input type="text" id="teachSkill" placeholder="E.g. Teach Guitar, Share Books" required>
+
+        <label>What do you want in return?</label>
+        <input type="text" id="learnSkill" placeholder="E.g. Learn Python, Get Book" required>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="join-us fade-up">
+    <h2>Join the Community Today!</h2>
+    <p>Start trading your skills and passions. Learning is better together.</p>
+    <a href="offers.html" class="cta-btn">Explore Offers</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footerHead">
+        <h2 class="footer-logo">Trade Bridge</h2>
+        <p class="footer-tagline">Exchange skills, books, and more. Learn together. Grow together.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="about.html">About</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="offers.html">Offers</a>
+      </div>
+    </div>
+
+    <div class="footer-contact">
+      <p>Email: <a href="mailto:tradebridge@example.com">tradebridge@example.com</a></p>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Trade Bridge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

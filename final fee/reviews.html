@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews | Trade Bridge</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Trade Bridge</div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#post-skill">Post Offer</a></li>
+      <li><a href="offers.html">Offers</a></li>
+      <li><a href="reviews.html" class="active">Reviews</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" style="height: 60vh; background: linear-gradient(rgba(0, 119, 182, 0.7), rgba(0, 180, 216, 0.7)), url('review-bg.jpg') center/cover no-repeat;">
+    <div class="hero-content">
+      <h1 class="fade-up">What Our Users Say</h1>
+      <p class="fade-up-delay">Read reviews from learners, traders, and creators around the globe.</p>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="reviews fade-up">
+    <h2>Community Reviews</h2>
+    <div id="reviewList" class="review-list">
+      <p>Loading reviews...</p>
+    </div>
+  </section>
+
+  <!-- Post Review Form -->
+  <section class="post-review fade-up">
+    <h2>Share Your Experience</h2>
+    <form id="reviewForm" class="glass">
+      <label for="reviewerName">Your Name:</label>
+      <input type="text" id="reviewerName" placeholder="Enter your name" required>
+
+      <label for="reviewText">Your Review:</label>
+      <textarea id="reviewText" rows="4" placeholder="Write your thoughts..." required></textarea>
+
+      <label>Your Rating:</label>
+      <div class="stars" id="starContainer">
+        <i class="fa-solid fa-star" data-rating="1"></i>
+        <i class="fa-solid fa-star" data-rating="2"></i>
+        <i class="fa-solid fa-star" data-rating="3"></i>
+        <i class="fa-solid fa-star" data-rating="4"></i>
+        <i class="fa-solid fa-star" data-rating="5"></i>
+      </div>
+
+      <button type="submit">Submit Review</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footerHead">
+        <h2 class="footer-logo">Trade Bridge</h2>
+        <p class="footer-tagline">Exchange skills, books, and ideas — together we grow.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="about.html">About</a>
+        <a href="offers.html">Offers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-contact">
+      <p>Email: <a href="mailto:tradebridge@example.com">tradebridge@example.com</a></p>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Trade Bridge. All rights reserved.</p>
+    </div>
+  </footer>
+
+<!-- JS LINKS (no folder path now since everything is in same directory) -->
+<script src="index.js"></script>
+<script src="reviews.js"></script>
+</body>
+</html>
+
