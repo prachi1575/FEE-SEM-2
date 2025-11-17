@@ -1,0 +1,122 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    /* Fixed width for carousel items */
+    min-width: 280px;
+    max-width: 280px;
+
+    /* Scroll snap alignment */
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+
+    background-color: var(--color-card-bg);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-background);
+}
+
+.content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Tag Styles */
+.tagOffer,
+.tagRequest {
+    font-size: 0.75rem;
+    /* xs */
+    font-weight: 700;
+    margin: 0 0 0.25rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tagOffer {
+    color: var(--primary);
+    /* Blue */
+}
+
+.tagRequest {
+    color: var(--secondary);
+    /* Teal */
+}
+
+.title {
+    font-size: 1.125rem;
+    /* lg */
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+    /* Truncate text after 1 line */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.avatar {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    object-fit: cover;
+}
+
+.username {
+    font-size: 0.875rem;
+    /* sm */
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.button {
+    margin-top: 1rem;
+    width: 88%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-default);
+    height: 2.5rem;
+    padding: 0 1rem;
+    background-color: var(--primary);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 700;
+    transition: opacity 0.2s;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+/* Add this to your existing TradeCard.module.css */
+.tagSwap {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #9b59b6;
+    /* Purple for Swaps */
+}

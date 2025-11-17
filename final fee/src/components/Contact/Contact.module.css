@@ -1,0 +1,236 @@
+.pageContainer {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--color-text-primary);
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.033em;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+/* Info Column */
+.infoColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.infoCard {
+    background-color: var(--primary);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 10px 30px rgba(74, 144, 226, 0.2);
+}
+
+.infoTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 2rem 0;
+}
+
+.infoItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.infoItem span {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem;
+    border-radius: 50%;
+    font-size: 1.25rem;
+}
+
+.infoLabel {
+    font-size: 0.875rem;
+    opacity: 0.8;
+    margin: 0 0 0.25rem 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.infoValue,
+.infoLink {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin: 0;
+    color: white;
+    line-height: 1.5;
+}
+
+.infoLink:hover {
+    text-decoration: underline;
+}
+
+.faqPreview {
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background-color: var(--color-card-bg);
+}
+
+.faqTitle {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: var(--color-text-primary);
+}
+
+.faqList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.faqList li {
+    margin-bottom: 0.75rem;
+}
+
+.faqList a {
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.faqList a:hover {
+    text-decoration: underline;
+}
+
+/* Form Column */
+.form {
+    background-color: var(--color-card-bg);
+    padding: 2.5rem;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.input,
+.select,
+.textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border-radius: var(--radius-default);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--secondary);
+    /* Teal */
+    color: #111;
+    /* Dark text for contrast */
+    border: none;
+    border-radius: var(--radius-default);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.submitButton:hover {
+    opacity: 0.9;
+}
+
+.submitButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Success State */
+.successMessage {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.successMessage span {
+    font-size: 4rem;
+    color: #2ecc71;
+    /* Success Green */
+    margin-bottom: 1rem;
+}
+
+.successMessage h3 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--color-text-primary);
+}
+
+.successMessage p {
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+}
+
+.resetButton {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .contentGrid {
+        grid-template-columns: 1fr 1.5fr;
+        /* Info narrower than form */
+    }
+}

@@ -39,15 +39,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const formSection = document.querySelector(".form-section");
+  const postSkillSection = document.querySelector(".post-skill");
+
   let formAnimated = false;
   function handleFormAnimation() {
-    if (!formSection) return;
-    const trigger = getTriggerPoint();
-    const r = formSection.getBoundingClientRect();
-    if (r.top <= trigger && !formAnimated) {
-      formSection.classList.add("visible");
-      formAnimated = true;
-    }
+  // Animate entire Post Offer section
+if (postSkillSection) {
+  const rect = postSkillSection.getBoundingClientRect();
+  if (rect.top <= window.innerHeight * 0.75) {
+    postSkillSection.classList.add("visible");
+  }
+}
+
   }
 
   const testimonials = document.querySelectorAll(".testimonials");
@@ -250,6 +253,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // small feedback
       alert("Offer posted! (Saved locally in your browser)");
       form.reset();
+      form.classList.add("success");
+setTimeout(() => form.classList.remove("success"), 1500);
+
       // scroll to offers
       document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" });
     });

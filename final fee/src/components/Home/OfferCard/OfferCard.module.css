@@ -1,0 +1,99 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    /* gap-3 in p-4 */
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-card-bg);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.imageLink {
+    display: block;
+}
+
+.image {
+    width: 100%;
+    height: 12rem;
+    /* h-48 */
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    padding: 1rem;
+    /* p-4 */
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    /* gap-3 */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 1.125rem;
+    /* text-lg */
+    margin: 0;
+    transition: color 0.2s;
+}
+
+.title:hover {
+    color: var(--primary);
+}
+
+.tag {
+    font-size: 0.75rem;
+    /* text-xs */
+    font-weight: 600;
+    /* font-semibold */
+    padding: 0.25rem 0.5rem;
+    /* px-2 py-1 */
+    border-radius: 9999px;
+    /* rounded-full */
+}
+
+.tagSkill {
+    background-color: rgba(0, 167, 225, 0.2);
+    /* bg-primary/20 */
+    color: var(--primary);
+}
+
+.tagItem {
+    background-color: rgba(255, 107, 107, 0.2);
+    /* bg-secondary/20 */
+    color: var(--secondary);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* gap-2 */
+}
+
+.avatar {
+    width: 1.5rem;
+    /* w-6 */
+    height: 1.5rem;
+    /* h-6 */
+    border-radius: 9999px;
+    /* rounded-full */
+}
+
+.username {
+    font-size: 0.875rem;
+    /* text-sm */
+    color: var(--color-text-muted);
+}

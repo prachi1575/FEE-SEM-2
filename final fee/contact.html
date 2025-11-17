@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Trade Bridge</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Trade Bridge</div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#post-skill">Post Offer</a></li>
+      <li><a href="offers.html">Offers</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Spacer -->
+  <div style="height:80px"></div>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <h1>Contact Us</h1>
+      <p class="contact-intro">We’d love to hear from you! Whether you have a question, feedback, or collaboration idea — reach out to us.</p>
+
+      <div class="contact-content">
+        <div class="contact-form">
+          <form id="contactForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required />
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
+
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h2>Reach Us At</h2>
+          <p><i class="fa-solid fa-envelope"></i> tradebridge@example.com</p>
+          <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+          <p><i class="fa-solid fa-location-dot"></i> Chitkara University, Punjab, India</p>
+
+          <div class="map-placeholder">
+            <i class="fa-solid fa-map-marked-alt"></i>
+            <p>Map view coming soon...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footerHead">
+        <h2 class="footer-logo">Trade Bridge</h2>
+        <p class="footer-tagline">Exchange skills, books, and ideas — together we grow.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="about.html">About</a>
+        <a href="offers.html">Offers</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-contact">
+      <p>Email: <a href="mailto:tradebridge@example.com">tradebridge@example.com</a></p>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Trade Bridge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+  <script>
+    // simple alert handler for contact form
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thank you for contacting Trade Bridge! We’ll get back to you soon.');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

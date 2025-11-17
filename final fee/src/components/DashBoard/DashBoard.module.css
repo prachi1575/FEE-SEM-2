@@ -1,0 +1,116 @@
+.loadingContainer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    min-height: 50vh;
+}
+
+.pageHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 1.875rem;
+    /* 3xl */
+    font-weight: 900;
+    letter-spacing: -0.033em;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+    font-size: 1.375rem;
+    /* 22px */
+    font-weight: 700;
+    padding-bottom: 1rem;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+/* Horizontal Carousel for Recommended Trades */
+.carousel {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1.5rem;
+    /* Space for scrollbar/shadow */
+
+    /* Negative margin hack to allow scrolling edge-to-edge on mobile */
+    margin: 0 -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    /* Scroll Snapping */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar for cleaner look (optional) */
+.carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background-color: var(--color-border);
+    border-radius: 4px;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 640px) {
+
+    /* sm */
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* md */
+    .title {
+        font-size: 2.25rem;
+        /* 4xl */
+    }
+}
+
+@media (min-width: 1024px) {
+
+    /* lg */
+    .statsGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .carousel {
+        /* Remove negative margins on large screens if desired, or keep for consistency */
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

@@ -1,0 +1,139 @@
+.footer {
+    background-color: var(--color-card-bg);
+    border-top: 1px solid var(--color-border);
+    width: 100%;
+    margin-top: auto;
+    /* Pushes footer to bottom */
+}
+
+.container {
+    width: 95%;
+    max-width: 1280px;
+    /* max-w-7xl */
+    margin: 0 auto;
+    padding: 1rem;
+    /* p-4 */
+}
+
+.topSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logoGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    /* mb-4 */
+    gap: 0.75rem;
+}
+
+.logoSvg {
+    color: var(--primary);
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.logoTitle {
+    font-size: 1.5rem;
+    /* text-2xl */
+    font-weight: 600;
+    /* font-semibold */
+    color: var(--color-text-primary);
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    /* mb-6 */
+    list-style: none;
+    padding: 0;
+    font-size: 0.875rem;
+    /* text-sm */
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.navLink {
+    margin: 0 0.75rem;
+    /* mr-4 md:mr-6 */
+    padding: 0.5rem 0;
+}
+
+.navLink:hover {
+    text-decoration: underline;
+}
+
+.hr {
+    margin: 1.5rem 0;
+    /* my-6 */
+    border-color: var(--color-border);
+}
+
+.bottomSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.copyright {
+    font-size: 0.875rem;
+    /* text-sm */
+    color: var(--color-text-secondary);
+    text-align: center;
+}
+
+.copyrightLink:hover {
+    text-decoration: underline;
+}
+
+.socialIcons {
+    display: flex;
+    margin-top: 1rem;
+    /* mt-4 */
+    gap: 1.25rem;
+    /* space-x-5 */
+}
+
+.socialLink {
+    color: var(--color-text-secondary);
+}
+
+.socialLink:hover {
+    color: var(--color-text-primary);
+}
+
+@media (min-width: 640px) {
+
+    /* sm */
+    .container {
+        padding: 2rem;
+        /* md:py-8 */
+    }
+
+    .topSection {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .logoGroup {
+        margin-bottom: 0;
+    }
+
+    .nav {
+        margin-bottom: 0;
+    }
+
+    .bottomSection {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .socialIcons {
+        margin-top: 0;
+    }
+}

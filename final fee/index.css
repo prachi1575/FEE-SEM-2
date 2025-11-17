@@ -1,3 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+
 /* 🌐 GLOBAL RESETS & THEME */
 body {
   padding-top: 70px; /* height of navbar */
@@ -47,6 +55,18 @@ body {
   font-weight: 700;
   letter-spacing: 1px;
 }
+.logo {
+  font-weight: 800;
+  font-size: 1.9rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.nav-links a:hover {
+  color: #90e0ef;
+  text-shadow: 0 0 10px rgba(144, 224, 239, 0.7);
+}
+
 
 .nav-links {
   list-style: none;
@@ -237,6 +257,37 @@ body {
   background: var(--light-blue);
   box-shadow: 0 0 10px var(--sky);
 }
+.glass input:focus {
+  outline: none;
+  border-color: var(--light-blue);
+  box-shadow: 0 0 8px rgba(0, 180, 216, 0.3);
+  transition: all 0.2s ease;
+}
+
+.glass button {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: 0.5s;
+}
+
+.glass button:hover::after {
+  left: 100%;
+}
+.glass.success {
+  box-shadow: 0 0 20px rgba(0, 200, 100, 0.4);
+  transition: box-shadow 0.4s ease;
+}
+
 
 /* 💡 CTA SECTION */
 .join-us {
@@ -266,6 +317,52 @@ body {
   color: white;
   box-shadow: 0 0 15px var(--sky);
 }
+/* Make CTA section layout robust and prevent overlap */
+.join-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;           /* clean spacing between heading, text, button */
+  padding: 3.5rem 1rem; /* add a little more vertical space */
+  position: relative;  /* establish local stacking context */
+  overflow: visible;   /* allow subtle shadows, not clipping */
+}
+
+/* Ensure heading sits above and has space */
+.join-us h2 {
+  margin: 0;
+  z-index: 2;           /* keep headline above other elements */
+  position: relative;
+  line-height: 1.1;
+}
+
+/* Subtext spacing */
+.join-us p {
+  max-width: 800px;
+  text-align: center;
+  margin: 0;
+  z-index: 1;
+  position: relative;
+  opacity: .95;
+}
+
+/* Button: make it a normal flow element, add margin-top instead of negative translate */
+.cta-btn,
+.start-btn {
+  position: relative;   /* avoid absolute positioning which causes overlap */
+  z-index: 1;
+  margin-top: 12px;     /* explicit breathing room under headline/text */
+  padding: 12px 26px;
+  display: inline-block;
+}
+
+/* Small screens: increase vertical spacing to avoid overlap */
+@media (max-width: 480px) {
+  .join-us { padding: 2.5rem 1rem; gap: 1.25rem; }
+  .cta-btn, .start-btn { margin-top: 14px; }
+}
+
 
 /* 🦶 FOOTER */
 footer {
@@ -334,6 +431,44 @@ footer {
   transform: translateY(40px);
   animation: fadeUp 1s 0.6s forwards;
 }
+/* ✨ Post Offer Entry Animation */
+.post-skill {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-out;
+}
+
+.post-skill.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.post-skill.visible {
+  box-shadow: 0 0 25px rgba(0, 119, 182, 0.2);
+  border-radius: 15px;
+  transition: all 1s ease;
+}
+.postSkillHeading {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.postSkillHeading::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: var(--blue);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+.post-skill {
+  background: linear-gradient(180deg, #f8f9fa 0%, #eaf9ff 100%);
+}
+
+
+
 
 @keyframes fadeUp {
   to {
@@ -482,4 +617,261 @@ footer {
   color: #023e8a;
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
+}
+/* -----------------------------
+   OFFERS PAGE CARD FIXES
+------------------------------ */
+.skills-section {
+  padding: 4rem 2rem;
+  background: var(--white);
+  min-height: 100vh;
+}
+
+.skills-section h1,
+.skills-section h2 {
+  text-align: center;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+}
+
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+.skill-card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
+}
+
+.skill-card h3 {
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.skill-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0.4rem 0;
+}
+/* OFFERS layout */
+.skills-section {
+  padding: 2.5rem 1rem 4rem;
+  background: #f7fbfd;
+  min-height: 60vh;
+}
+
+.skills h2 { text-align:center; margin-bottom:1rem; color: #023e8a; }
+
+/* grid for cards */
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0.75rem auto;
+  padding: 0 1rem;
+}
+
+.skill-card {
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(2,62,138,0.07);
+  text-align: left;
+  transition: transform .25s ease, box-shadow .25s ease;
+  width: 100%;
+}
+
+.skill-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(2,62,138,0.12);
+}
+.skill-card {
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from { transform: translateY(15px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+.skill-card h3{ color: #0077b6; margin-bottom:0.35rem; }
+.skill-card p{ margin:0.2rem 0; color:#333; font-size:0.95rem; }
+
+/* About Page */
+.about-section {
+  padding: 4rem 1rem;
+  background: #f7fbfd;
+  color: #023e8a;
+  text-align: center;
+  min-height: 80vh;
+}
+
+.about-section h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.about-section .intro {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.about-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 119, 182, 0.25);
+}
+
+.about-card i {
+  font-size: 2rem;
+  color: #0077b6;
+  margin-bottom: 1rem;
+}
+
+.about-card h3 {
+  margin-bottom: 0.5rem;
+  color: #0077b6;
+}
+/* Contact Page */
+.contact-section {
+  padding: 4rem 1rem;
+  background: #f8f9fa;
+  color: #023e8a;
+  min-height: 80vh;
+}
+
+.contact-section h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: flex-start;
+}
+
+.contact-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #023e8a;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: none;
+}
+
+.contact-form button {
+  margin-top: 1.5rem;
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #005b8c;
+  transform: translateY(-2px);
+}
+
+.contact-info {
+  text-align: left;
+  color: #333;
+  background: #e3f2fd;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info h2 {
+  color: #0077b6;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #0077b6;
+}
+
+.map-placeholder {
+  text-align: center;
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
