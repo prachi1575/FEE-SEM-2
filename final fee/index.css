@@ -214,6 +214,10 @@ body {
 }
 
 /* 📄 FORM SECTION (GLASS EFFECT) */
+.form-section :focus-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
 .post-skill {
   padding: 3rem 1rem;
   text-align: center;
@@ -874,4 +878,115 @@ footer {
   border-radius: 10px;
   padding: 1rem;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+.btn-nav {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: white;
+  color: #0077b6 !important;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-nav:hover {
+  background: #90e0ef;
+  color: white !important;
+}
+
+.btn-nav.highlight {
+  background: #00b4d8;
+  color: white !important;
+}
+.navbar {
+  background: linear-gradient(90deg, #0077b6, #00b4d8) !important;
+}
+
+.nav-links a {
+  color: white !important;
+  font-weight: 500;
+}
+.nav-links.open {
+  background: #0077b6 !important;
+}
+
+/* FIX NAVBAR BEING COVERED BY LOGIN/SIGNUP */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999 !important;   /* bring navbar on top */
+}
+
+/* Fix any floating login/signup wrapper */
+.auth-buttons {
+    z-index: 1 !important;
+    position: relative;
+}
+.auth-buttons a {
+  background: var(--light-blue);
+  padding: 6px 16px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.auth-buttons a:hover {
+  background: var(--blue);
+}
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f1fbff;
+}
+
+.auth-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+.auth-box h2 {
+  color: #0077b6;
+  margin-bottom: 1rem;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.auth-box button {
+  width: 100%;
+  padding: 12px;
+  background: #0077b6;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.auth-box button:hover {
+  background: #005f93;
+}
+
+.switch-msg {
+  margin-top: 1rem;
+}
+
+.switch-msg a {
+  color: #0077b6;
+  font-weight: bold;
 }

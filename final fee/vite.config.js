@@ -1,7 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-})
+  server: {
+    proxy: {
+      "/signup": {
+        target: "http://localhost:5000",
+        changeOrigin: true,
+      },
+      "/login": {
+        target: "http://localhost:5000",
+        changeOrigin: true,
+      }
+    }
+  }
+});

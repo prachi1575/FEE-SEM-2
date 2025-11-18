@@ -1,22 +1,28 @@
-// reviews.js - Handles review submission and rendering
+// reviews.js — Backend Connected Version
 
 document.addEventListener("DOMContentLoaded", () => {
+
   const reviewList = document.getElementById("reviewList");
   const reviewForm = document.getElementById("reviewForm");
   const stars = document.querySelectorAll("#starContainer i");
   let selectedRating = 0;
 
-  // Load reviews from localStorage
+  // Load reviews from backend
   function loadReviews() {
-    const data = JSON.parse(localStorage.getItem("tradebridge_reviews")) || [];
-    renderReviews(data);
+    fetch("http://localhost:5000/api/reviews")
+      .then(res => res.json())
+      .then(data => renderReviews(data))
+      .catch(err => {
+        reviewList.innerHTML = "<p style='color:red'>Failed to load reviews</p>";
+      });
   }
 
-  // Render reviews dynamically
+  // Render reviews
   function renderReviews(reviews) {
     reviewList.innerHTML = "";
+
     if (!reviews.length) {
-      reviewList.innerHTML = "<p>No reviews yet. Be the first to share!</p>";
+      reviewList.innerHTML = "<p>No reviews yet. Be the first!</p>";
       return;
     }
 
@@ -31,29 +37,41 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <p>${r.text}</p>
       `;
+
       reviewList.appendChild(div);
     });
   }
 
-  // Save review
+  // POST review to backend
   function saveReview(name, text, rating) {
-    const reviews = JSON.parse(localStorage.getItem("tradebridge_reviews")) || [];
-    reviews.unshift({ name, text, rating });
-    localStorage.setItem("tradebridge_reviews", JSON.stringify(reviews));
-    loadReviews();
+    fetch("http://localhost:5000/api/reviews", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, text, rating })
+    })
+      .then(() => {
+        alert("Thank you for your review!");
+        loadReviews();
+      })
+      .catch(err => {
+        alert("Error posting review.");
+      });
   }
 
-  // Star selection logic
+  // Star selection
   stars.forEach(star => {
     star.addEventListener("click", () => {
       selectedRating = parseInt(star.dataset.rating);
-      stars.forEach(s => s.classList.toggle("active", parseInt(s.dataset.rating) <= selectedRating));
+      stars.forEach(s =>
+        s.classList.toggle("active", parseInt(s.dataset.rating) <= selectedRating)
+      );
     });
   });
 
-  // Handle form submission
+  // Submit form
   reviewForm.addEventListener("submit", e => {
     e.preventDefault();
+
     const name = document.getElementById("reviewerName").value.trim();
     const text = document.getElementById("reviewText").value.trim();
 
@@ -63,11 +81,57 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     saveReview(name || "Anonymous", text, selectedRating);
+
     reviewForm.reset();
     stars.forEach(s => s.classList.remove("active"));
     selectedRating = 0;
-    alert("Thank you for your review!");
   });
 
   loadReviews();
+});
+// Load users
+const usersFile = path.join(__dirname, "users.json");
+
+function loadUsers() {
+  return JSON.parse(fs.readFileSync(usersFile, "utf8"));
+}
+
+function saveUsers(users) {
+  fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
+}
+
+// SIGNUP (POST)
+app.post("/api/signup", (req, res) => {
+  const { name, email, password } = req.body;
+
+  const users = loadUsers();
+
+  // Check if email exists
+  if (users.find(u => u.email === email)) {
+    return res.status(400).json({ message: "Email already registered" });
+  }
+
+  users.push({ name, email, password });
+  saveUsers(users);
+
+  res.json({ message: "Signup successful" });
+});
+
+// LOGIN (POST)
+app.post("/api/login", (req, res) => {
+  const { email, password } = req.body;
+
+  const users = loadUsers();
+
+  const user = users.find(u => u.email === email && u.password === password);
+
+  if (!user) {
+    return res.status(401).json({ message: "Invalid credentials" });
+  }
+
+  res.json({
+    message: "Login successful",
+    name: user.name,
+    email: user.email
+  });
 });

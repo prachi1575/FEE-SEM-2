@@ -1,40 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Trade Bridge | Connect. Learn. Grow.</title>
 
-  <!-- FontAwesome + CSS -->
-   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">Trade Bridge</div>
+  <!--NAVBAR-->
+<nav class="navbar">
 
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+  <div class="logo">Trade Bridge</div>
 
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html#home" class="active">Home</a></li>
-      <li><a href="index.html#post-skill">Post Offer</a></li>
-      <li><a href="offers.html">Offers</a></li>
-      <li><a href="reviews.html">Reviews</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html#home" class="active">Home</a></li>
+    <li><a href="index.html#post-skill">Post Offer</a></li>
+    <li><a href="offers.html">Offers</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
 
-  <!-- Hero Section -->
+  <div class="auth-buttons">
+    <a href="login.html" class="login-btn">Login</a>
+    <a href="signup.html" class="signup-btn">Signup</a>
+  </div>
+
+</nav>
+
+
+  <!-- HERO -->
   <section id="home" class="hero">
     <div class="hero-content">
       <h1 class="fade-up">Connect. Learn. Grow.</h1>
@@ -48,7 +49,7 @@
     </div>
   </section>
 
-  <!-- Counters Section -->
+  <!-- STATS -->
   <section class="stats">
     <div class="stat-card fade-up">
       <h2>500+</h2>
@@ -64,18 +65,18 @@
     </div>
   </section>
 
-  <!-- Post Offer Form -->
-  <section class="post-skill" id="post-skill">
+  <!-- POST OFFER -->
+  <section class="post-skill visible" id="post-skill">
     <h1 class="postSkillHeading">Post Your Offer</h1>
-    <div class="form-section glass fade-up">
+    <div class="form-section glass">
       <form id="skillForm">
-        <label>Your Name:</label>
+        <label for="name">Your Name:</label>
         <input type="text" id="name" placeholder="Enter your name" required>
 
-        <label>What do you offer?</label>
+        <label for="teachSkill">What do you offer?</label>
         <input type="text" id="teachSkill" placeholder="E.g. Teach Guitar, Share Books" required>
 
-        <label>What do you want in return?</label>
+        <label for="learnSkill">What do you want in return?</label>
         <input type="text" id="learnSkill" placeholder="E.g. Learn Python, Get Book" required>
 
         <button type="submit">Submit</button>
@@ -83,14 +84,14 @@
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- CTA -->
   <section class="join-us fade-up">
     <h2>Join the Community Today!</h2>
     <p>Start trading your skills and passions. Learning is better together.</p>
     <a href="offers.html" class="cta-btn">Explore Offers</a>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-top">
       <div class="footerHead">
@@ -120,6 +121,7 @@
     </div>
   </footer>
 
+  <!-- Main JS -->
   <script src="index.js"></script>
 </body>
 </html>
